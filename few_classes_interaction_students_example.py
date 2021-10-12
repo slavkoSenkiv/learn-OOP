@@ -2,7 +2,7 @@ class Student:
     def __init__(self, name, age, grade):
         self.name = name
         self.age = age
-        self.grade = grade  # 0 - 100
+        self.grade = grade + 100  # 0 - 100
 
     def get_grade(self):
         return self.grade
@@ -36,9 +36,11 @@ s3 = Student('Jill', 19, 65)
 course = Course('Math', 2)
 course.add_student(s1)
 course.add_student(s2)
-print(course.add_student(s3))
-print(course.students)
-print(course.students[0].name)
-print(course.get_avarage_grade())
+
+print('course.add_student(s3)', course.add_student(s3))
+print('course.students', course.students)
+print('course.get_avarage_grade()', course.get_avarage_grade())
+print('s1.get_grade()', s1.get_grade())
+print('s1.grade', s1.grade)
 
 
