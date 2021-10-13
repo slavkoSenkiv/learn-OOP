@@ -1,15 +1,9 @@
-class Dog:
+class Dog():
 
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        print(name, age)
-
-    def bark(self):
-        print('woof')
-
-    def bite_more(self, bites_num):
-        return 'bite ' * bites_num
+        print(f'My name is {self.get_name()}')
 
     def get_name(self):
         return self.name
@@ -17,56 +11,33 @@ class Dog:
     def get_age(self):
         return self.age
 
-    def set_age(self, age):
-        self.age = age
+    def sound(self):
+        print('my sound is Woof')
+        return 'Woof'
 
-class Cat:
-
-    def __init__(self, name):
-        self.name = name
-        self.nicks = []
-
-    def get_name(self):
-        return self.name
-
-    def set_nick(self, nick):
-        self.nicks.append(nick)
-
-# <editor-fold desc="print dog part">
-d1 = Dog('Tim', 32)
-print('d1 = Dog("Tim", 32) | ', d1)
-
-d2 = Dog('Bill', 12)
-print('d2 = Dog("Bill", 12) | ', d2)
-
-print('d1.name | ', d1.name)
-
-print('d1.get_name() | ', d1.get_name())
-
-print('d1.get_age() | ', d1.get_age())
-
-print('d1.set_age(17) | ', d1.set_age(17))
-
-print('d1.get_age() | ', d1.get_age())
-
-print('d1.bite_more(2) | ', d1.bite_more(2))
-# </editor-fold>
-print('\n')
-# <editor-fold desc="print dog part">
-c1 = Cat('Vin')
-print('c1 = Cat("Vin") | ', c1)
-print('c1.get_name() | ', c1.get_name())
-print('c1.name | ', c1.name)
-print('c1.get_name() | ', c1.nicks)
-print('c1.set_nick() | ', c1.set_nick('zhyr'))
-print('c1.get_name() | ', c1.nicks)
-print('c1.set_nick() | ', c1.set_nick('salo'))
-print('c1.get_name() | ', c1.nicks)
-
-# </editor-fold>
+    def bite(self, times):
+        bites = 'bite ' * times
+        print(bites)
 
 
+def play_obj(class1, bites):
+    print('class1', end=' | ')
+    class1
 
+    print('class1.sound()', end=' | ')
+    class1.sound()
+
+    print('class1.bite(bites)', end=' | ')
+    class1.bite(bites)
+
+    print('class1.age |', class1.age)
+    print('class1.get_age() |', class1.get_age())
+
+    print('\n')
+
+
+play_obj(Dog('Bill', 2), 4)
+play_obj(Dog('Timm', 3), 5)
 
 
 
