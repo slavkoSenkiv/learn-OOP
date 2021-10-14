@@ -10,6 +10,9 @@ class Cat(Pet):
         super().__init__(name, age, color)
         self.fur = fur
 
+    def show(self):
+        print(f"I'm {self.name} and I'm {self.age} years old and I'm {self.color}")
+
     def speak(self):
         print('Meow')
 
@@ -36,5 +39,11 @@ play_obj(d)
 
 print(c.fur)
 
+<<<<<<< Updated upstream
+=======
+c = Cat('Bill', 34, 'black')  # , 'black')
+c.show()
+c.speak()
+>>>>>>> Stashed changes
 
 
