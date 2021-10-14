@@ -1,20 +1,14 @@
-
 class Pet:
-    def __init__(self, name, age):
+    def __init__(self, name, age, color):
         self.name = name
         self.age = age
-
-    def show(self):
-        print(f"I'm {self.name} and I'm {self.age} years old")
-
-    def speak(self):
-        print('idk what to say')
+        self.color = color
 
 
 class Cat(Pet):
-    def __init__(self, name, age, color):
-        super().__init__(name, age)
-        self.color = color
+    def __init__(self, name, age, color, fur):
+        super().__init__(name, age, color)
+        self.fur = fur
 
     def speak(self):
         print('Meow')
@@ -25,22 +19,22 @@ class Dog(Pet):
         print('Bark')
 
 
-class Fish(Pet):
-    pass
+c = Cat('Tim', 7, 'black', 'long')
+d = Dog('Bill', 9, 'brown')
 
 
-p = Pet('Tim', 19)
-p.show()
-p.speak()
+def play_obj(class1):
+    print(class1.name)
+    print(class1.age)
+    print(class1.color)
+    class1.speak()
+    print('\n')
 
-c = Cat('Bill', 34)
-c.show()
-c.speak()
 
-d = Dog('Jill', 25)
-d.show()
-d.speak()
+play_obj(c)
+play_obj(d)
 
-f = Fish('Bubble', 10)
-f.show()
-f.speak()
+print(c.fur)
+
+
+
