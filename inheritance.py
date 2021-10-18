@@ -22,6 +22,9 @@ class Dog(Pet):
     def speak(self):
         print('Bark')
 
+class Fish(Pet):
+    def speak(self):
+        pass
 
 c = Cat('cat', 'Tim', 7, 'black', 'long')
 d = Dog('dog', 'Bil', 9, 'brown')
@@ -41,7 +44,43 @@ play_obj(c)
 play_obj(d)
 print(c.fur)
 
+f = Fish('Bubble', 10)
+f.show()
+f.speak()
 
 
+# new day new remembering
+
+class Weapon:
+    place_in_bag = 2
+
+    def __init__(self, name, weight, hands, attack):
+        self.name = name
+        self.weight = weight
+        self.attack = attack
+        self.hands = hands
 
 
+class Sword(Weapon):
+
+    def physical_damage(self):
+        damage_size = self.attack * self.place_in_bag
+        return damage_size
+
+
+class Stuff(Weapon):
+
+    def __init__(self, name, weight, hands, attack, length):
+        super().__init__(name, weight, hands, attack)
+        self.length = length
+
+    def magical_damage(self):
+        damage_size = self.attack * self.place_in_bag * self.length
+        return damage_size
+
+
+sword = Sword('sword', 100, 1, 100)
+stuff = Stuff('stuff', 50, 2, 200, 0.3)
+
+print(sword.name, sword.physical_damage())
+print(stuff.name, stuff.magical_damage())
